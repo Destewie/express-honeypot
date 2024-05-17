@@ -66,18 +66,6 @@ function displayDetails(details) {
   collapsible();
 }
 function deleteLog(date) {
-  const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState !== 4) return;
-    if (xhr.status >= 200 && xhr.status < 300) {
-      const results = JSON.parse(xhr.responseText);
-      if (results.deleted === true) {
-        getDatas();
-      }
-    }
-  };
-  xhr.open("GET", `/beekeeper/d/log/${date}`);
-  xhr.send();
 }
 function displayResults(results) {
   const getResultsElm = document.getElementById("results");
